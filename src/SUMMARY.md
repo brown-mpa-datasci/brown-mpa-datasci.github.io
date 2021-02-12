@@ -1,3 +1,5 @@
 # Summary
 
-- [Chapter 1](./chapter_1.md)
+- [Introduction](./intro.md)
+    * [Format](./format.md)
+- [Foundations](./foundations.md)
