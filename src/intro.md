@@ -15,5 +15,8 @@ This module is a highly applied introduction to data science and programming for
 
 
 
+
+
+
 [^1] The exception here is for the `Foundations` lesson. As the name implies, this is an essential lesson for understanding other lessons.
 
