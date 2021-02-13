@@ -19,4 +19,5 @@ This module does not assume any previous exposure to programming. We do assume s
 
 ___
 [^1] So, if you have already take this course, then the material (and the video lessons) will mostly be review.
+
 [^2] The exception here is for the `Foundations` lesson. As the name implies, this is an essential lesson for understanding other sub-modules.
