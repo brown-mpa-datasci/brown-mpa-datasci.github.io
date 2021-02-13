@@ -1,3 +1,7 @@
+
+![](../assets/images/welcome-to-the-party.jpg)
+
+
 # Welcome!!!
 
 The aim of this module is to be a fully asynchronous introduction to programming and data science for students in Brown's MPA program. Most of the content for this module was pulled from different iteration of the MPA 2065 course[^1]. The module is divided in to 4 sub-modules, with each lesson being mostly independent of one another[^2].
