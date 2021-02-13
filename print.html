@@ -180,7 +180,7 @@
 <p><sup class="footnote-reference"><a href="#1">1</a></sup> For those with existing programming language preferences, we will happily answer question if you choose to complete the exercises in R, Python, or Julia. </p>
 <h1><a class="header" href="#module-resources" id="module-resources">Module Resources</a></h1>
 <p>The module utilize a combination of tools for asynchronous learning. In particular, we will use this website as the platform for sharing notes and video lessons. We will also use the JupyterHub<sup class="footnote-reference"><a href="#1">1</a></sup> computing environment for completing exercises and following along with the code. </p>
-<p>Additionally, all lesson slides and code for this module are available on GitHub<sup class="footnote-reference"><a href="#2">2</a></sup>.</p>
+<p>Additionally, all lessons' slides and code for this module are available on GitHub<sup class="footnote-reference"><a href="#2">2</a></sup>.</p>
 <hr />
 <p><sup class="footnote-reference"><a href="#1">1</a></sup> https://mpa.jupyter.brown.edu
 <sup class="footnote-reference"><a href="#2">2</a></sup> https://github.com/brown-mpa-datasci/slides</p>
@@ -728,6 +728,38 @@ while (a &gt; 1) {
 }
 </code></pre>
 <p>In the above example we use the <code>next</code> statement to skip all the iterations where <code>i</code> is an even number (recall that the modulo operator gives us the remainder of integer division).</p>
+<h1><a class="header" href="#the-dataframe-and-tidy-data" id="the-dataframe-and-tidy-data">The <code>data.frame</code> and Tidy Data</a></h1>
+<p>In this lesson we will cover the basics of data in R and will do so from a somewhat opinionated viewpoint of &quot;Tidy Data&quot;.  There are other paradigms and other ways to work with data in R, but focusing on Tidy Data concepts and tools (a.k.a., The Tidyverse) gets people to a productive place the quickest.  For more on data analysis using the Tidyverse, the best resource I know of is <a href="http://r4ds.had.co.nz">R for Data Science</a>.  The approaches we will cover are very much inspired by this book.</p>
+<h2><a class="header" href="#the-dataframe" id="the-dataframe">The <code>data.frame</code></a></h2>
+<p>Simply put, a data structure is a way for programming languages to handle storing information.  Like most languages, R has several structures (vectors, matrix, lists, etc.).  But R was originally built for data analysis, so the <code>data.frame</code>, a spreadsheet like structure with rows and columns, is the most widely used.  In addition, the <code>data.frame</code> is the basis for many modern R pacakges (e.g. the tidyverse) and getting used to it will allow you to quickly build your R skills.</p>
+<p>Best way to learn what a data frame is is to look at one.  Let's now build a simple data frame from scratch with the <code>data.frame()</code> function.  This is mostly a teaching excercise as we will use the function very little in the excercises to come.</p>
+<pre><code class="language-r"># Our first data frame
+
+my_df &lt;- data.frame(names = c(&quot;jones&quot;,&quot;lee&quot;,&quot;smith&quot;,&quot;yang&quot;), 
+                    age = c(45, 27, 38,51), 
+                    knows_r = c(FALSE, TRUE, TRUE,FALSE), 
+                    stringsAsFactors = FALSE)
+my_df
+</code></pre>
+<p>That created a data frame with 3 columns (names, age, knows_r) and four rows.  For each row we have some information on the name of an individual (stored as a character/string), their age (stored as a numeric value), and a column indicating if they know R or not (stored as a boolean/logical).</p>
+<p>If you have worked with data before in a spreadsheet or from a table in a database, this rectangular structure should look somewhat familiar.   One way (there are many!) we can access the different parts of the data frame is like:</p>
+<pre><code class="language-r"># Use the dollar sign to get a column
+my_df$age
+</code></pre>
+<pre><code class="language-r"># Grab a row with indexing
+my_df[2,]
+</code></pre>
+<p>At this point, we have:</p>
+<ul>
+<li>built a data frame from scratch</li>
+<li>seen rows and columns</li>
+<li>heard about &quot;rectangular&quot; structure</li>
+<li>seen how to get a row and a column</li>
+</ul>
+<p>The purpose of all this was to introduce the concept of the data frame.  Moving forward we will use other tools to read in data, but the end result will be the same: a data frame with rows (i.e. observations) and columns (i.e. variables).</p>
+<h2><a class="header" href="#reading-in-data" id="reading-in-data">Reading in data</a></h2>
+<p>Completely creating a data frame from scratch is useful (especially when you start writing your own functions), but more often than not data is stored in an external file that you need to read into R.  These may be delimited text files, spreadsheets, relational databases, SAS files ...  You get the idea.  Instead of treating this subject exhaustively, we will focus just on a single file type, the <code>.csv</code> file, that is very commonly encountered and (usually) easy to create from other file types.  For this, we will use the Tidyverse way to do this and use  <code>read_csv()</code> from the <code>readr</code> pacakge.</p>
+<p>The <code>read_csv()</code> function is a re-imagined version of the base R fucntion, <code>read.csv()</code>.  This command assumes a header row with column names and that the delimiter is a comma. The expected no data value is NA and by default, strings are NOT converted to factors.  This is a big benefit to using <code>read_csv()</code> as opposed to <code>read.csv()</code>.  Additionally, <code>read_csv()</code> has some performance enhancements that make it preferrable when working with larger data sets.  In my limited experience it is about 45% faster than the base R options.</p>
 <h1><a class="header" href="#other-interesting-types" id="other-interesting-types">Other Interesting Types</a></h1>
 <p>R has a number of other interesting types in the base language. The types discussed below are interesting in a number of ways. Of particular interest is the manner in which they hint at the early use cases and motivations for developing the R langauge; that is, working with tabular data, that is continuous or categorical, and which sometimes contain missing values. </p>
 <h1><a class="header" href="#the-na-type" id="the-na-type">The <code>NA</code> Type</a></h1>
