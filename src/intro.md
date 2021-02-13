@@ -1,5 +1,5 @@
 
-![](../assets/images/welcome-to-the-party.jpg)
+![](./assets/images/welcome-to-the-party.jpg)
 
 
 # Welcome!!!
