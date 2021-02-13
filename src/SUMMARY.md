@@ -7,7 +7,7 @@
     * [Unix Shell](./foundations/unix.md)
     * [Git Basics](./foundations/git.md)
     * [Intro to R](./foundations/intro-r.md)
-        - [Variables and Types](./foundataions/vars-and-types.md)
+        - [Variables and Types](./foundations/vars-and-types.md)
         - [Functions](./foundations/functions.md)
         - [Control Flow](./foundations/control-flow.md)
 - [DataFrames](./dataframes/dataframes.md)
