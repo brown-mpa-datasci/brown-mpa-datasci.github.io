@@ -1,10 +1,9 @@
-# Variables and Types {#variables}
+# Variables and Types
 
 ## Basic Math with R
 
-We can begin our exploration of R by using it in the most straightforward manner; that is, we will use R as a "fancy calculator". We will quickly see that R is capable of vastly more than a calculator, but this is a good place for us to begin our journey.[^2]
+We can begin our exploration of R by using it in the most straightforward manner; that is, we will use R as a "fancy calculator". We will quickly see that R is capable of vastly more than a calculator, but this is a good place for us to begin our journey.
 
-[^2]: Note that throughout this document we will have code snippets appearing in grey shaded blocks with a monospace font. And often below those blocks, we will see the output that the code snippet generated. These output blocks appear on white background in monospace font but with `##` in front of each line. It is also worth noting that the output will frequently contain `[1]` in front of the actual result; this is normal, and will be explained after we discuss container types in Chapter 4.
 
 ```r
 13 + 7
@@ -32,19 +31,17 @@ And of course, we can also use the parantheses to control the order of operation
 
 ## Variable Assignment 
 
-In a more realistic scenario, we would perform some computation and also want to preserve the result in some way such that it is accessible for subsequent computations. Essentially, we want to tell the machine "_Do this math, and store the result_". This is something we can acheive using the assignment operator in R. The assignment operator in R is the arrow `<-`, which we construct using the less-than symbol combined with the dash symbol.[^3]
+In a more realistic scenario, we would perform some computation and also want to preserve the result in some way such that it is accessible for subsequent computations. Essentially, we want to tell the machine "_Do this math, and store the result_". This is something we can acheive using the assignment operator in R. The assignment operator in R is the arrow `<-`, which we construct using the less-than symbol combined with the dash symbol.[^1]
 
 ```r
 a <- 13 + 7
 ```
 
-[^3]: Strictly speaking, there are a few assignment operators in R, including the equal sign, which is much more common in other programming languages. However, when learning a programming language, it is generally preferred to adopt the conventions of the language. And the convention in R has always been to use `<-` for assignments.
 
 
-Programming is essentially just about giving a computer instructions. The above code is us telling the computer to take `13` and `7`, add them together, and then put the result in `a`. Here `a` is just a completely arbitrary label for the result of `13 + 7`.[^4] 
 
+Programming is essentially just about giving a computer instructions. The above code is us telling the computer to take `13` and `7`, add them together, and then put the result in `a`. Here `a` is just a completely arbitrary label for the result of `13 + 7`.[^2] 
 
-[^4]: It is worth noting that variable names are almost completely arbitrary; we could just as easily have said `potato <- 13 + 7`, and the only difference is that when we want to retrieve the value, we would now use `potato` to refer to it rather than `a`. The only restriction on variable names in R is that they must begin with an upper or lowercase letter.
 
 
 Note that the above code snippet does not immediately generate output. However, this is the default behavior when performing assignment. But now if we wanted to print the result of the computation, we can simply use the `print()` function in R.
@@ -169,7 +166,7 @@ my_vect <- c(55, 32, 123)
 print(my_vect)
 ```
 
-The `vector` type turns out to be one of the most fundamental in the R language. We will see vectors appear very often. Vectors can contain any type of objects, but a given vector in R will only contain a single type.[^6]
+The `vector` type turns out to be one of the most fundamental in the R language. We will see vectors appear very often. Vectors can contain any type of objects, but a given vector in R will only contain a single type.
 
 Accessing elements of a vector can be done using the square bracket notation seen below. 
 
@@ -255,25 +252,10 @@ arr[, , 3]
 
 
 
-## Other Interesting Types
-R has a number of other interesting types in the base language. The types discussed below are interesting in a number of ways. Of particular interest is the manner in which they hint at the early use cases and motivations for developing the R langauge; that is, working with tabular data, that is continuous or categorical, and which sometimes contain missing values. 
-
-### The `NA` Type
-
-One exceedingly common feature of working with real data sets is that they contain missing values. That is, for whatever reason, some entry was omitted for a given record. As an example, suppose a patient did not enter their age on the patient intake form. This would be a missing value that we then have to handle. 
-
-Missing data is so ubiquitous in real data sets that R has a built-in type for representing missing values. This is the `NA` type. The `NA` type is special in the sense that it "propogates" over computations. Note the example below, where we try to take the summation of the elements in the `vals` vector. 
-
-```r
-vals <- c(4, 23, NA)
-
-sum(vals)
-```
 
 
+---
 
+[^1]: Strictly speaking, there are a few assignment operators in R, including the equal sign, which is much more common in other programming languages. However, when learning a programming language, it is generally preferred to adopt the conventions of the language. And the convention in R has always been to use `<-` for assignments.
 
-
-
-
-[^6]: This is similar to _N_-dimensional arrays in the NumPy library in Python, as well as to the base `Array` type in Julia.
+[^2]: It is worth noting that variable names are almost completely arbitrary; we could just as easily have said `potato <- 13 + 7`, and the only difference is that when we want to retrieve the value, we would now use `potato` to refer to it rather than `a`. The only restriction on variable names in R is that they must begin with an upper or lowercase letter.
