@@ -1,0 +1,392 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Variables and Types - Introduction to Programming and Data Science</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../format.html"><strong aria-hidden="true">1.1.</strong> Format</a></li><li class="chapter-item expanded "><a href="../prerequisites.html"><strong aria-hidden="true">1.2.</strong> Prerequisites</a></li></ol></li><li class="chapter-item expanded "><a href="../foundations/foundations.html"><strong aria-hidden="true">2.</strong> Foundations</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../foundations/unix.html"><strong aria-hidden="true">2.1.</strong> Unix Shell</a></li><li class="chapter-item expanded "><a href="../foundations/git.html"><strong aria-hidden="true">2.2.</strong> Git Basics</a></li><li class="chapter-item expanded "><a href="../foundations/intro-r.html"><strong aria-hidden="true">2.3.</strong> Intro to R</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../foundations/vars-and-types.html" class="active"><strong aria-hidden="true">2.3.1.</strong> Variables and Types</a></li><li class="chapter-item expanded "><a href="../foundations/functions.html"><strong aria-hidden="true">2.3.2.</strong> Functions</a></li><li class="chapter-item expanded "><a href="../foundations/control-flow.html"><strong aria-hidden="true">2.3.3.</strong> Control Flow</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../dataframes/dataframes.html"><strong aria-hidden="true">3.</strong> DataFrames</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../dataframes/na.html"><strong aria-hidden="true">3.1.</strong> Missing Data</a></li><li class="chapter-item expanded "><a href="../dataframes/dplyr.html"><strong aria-hidden="true">3.2.</strong> The dplyr Package</a></li><li class="chapter-item expanded "><a href="../dataframes/cleaning.html"><strong aria-hidden="true">3.3.</strong> Cleaning Data</a></li><li class="chapter-item expanded "><a href="../dataframes/viz.html"><strong aria-hidden="true">3.4.</strong> Visualizing Data</a></li></ol></li><li class="chapter-item expanded "><a href="../models/models.html"><strong aria-hidden="true">4.</strong> Model Fitting</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../models/hypothesis-testing.html"><strong aria-hidden="true">4.1.</strong> Intro Hypothesis Testing</a></li><li class="chapter-item expanded "><a href="../models/lm.html"><strong aria-hidden="true">4.2.</strong> Linear Models</a></li><li class="chapter-item expanded "><a href="../models/glm.html"><strong aria-hidden="true">4.3.</strong> Generalized Linear Models</a></li></ol></li><li class="chapter-item expanded "><a href="../sql-python-julia/sql-python-julia.html"><strong aria-hidden="true">5.</strong> SQL, Python, Julia</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../sql-python-julia/sql.html"><strong aria-hidden="true">5.1.</strong> SQL Lanuage</a></li><li class="chapter-item expanded "><a href="../sql-python-julia/two-lang.html"><strong aria-hidden="true">5.2.</strong> Two-Language Problem</a></li></ol></li><li class="chapter-item expanded "><a href="../appendix/appendix.html"><strong aria-hidden="true">6.</strong> Appendix</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../appendix/all-videos.html"><strong aria-hidden="true">6.1.</strong> All Videos</a></li><li class="chapter-item expanded "><a href="../appendix/other-resources.html"><strong aria-hidden="true">6.2.</strong> Other Resources</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Introduction to Programming and Data Science</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#variables-and-types-variables" id="variables-and-types-variables">Variables and Types {#variables}</a></h1>
+<h2><a class="header" href="#basic-math-with-r" id="basic-math-with-r">Basic Math with R</a></h2>
+<p>We can begin our exploration of R by using it in the most straightforward manner; that is, we will use R as a &quot;fancy calculator&quot;. We will quickly see that R is capable of vastly more than a calculator, but this is a good place for us to begin our journey.<sup class="footnote-reference"><a href="#2">1</a></sup></p>
+<div class="footnote-definition" id="2"><sup class="footnote-definition-label">1</sup>
+<p>Note that throughout this document we will have code snippets appearing in grey shaded blocks with a monospace font. And often below those blocks, we will see the output that the code snippet generated. These output blocks appear on white background in monospace font but with <code>##</code> in front of each line. It is also worth noting that the output will frequently contain <code>[1]</code> in front of the actual result; this is normal, and will be explained after we discuss container types in Chapter 4.</p>
+</div>
+<pre><code class="language-r">13 + 7
+</code></pre>
+<p>We see from above that R can nicely perform simple addition. And the example below also demonstates slightly more interesting arithmetic.</p>
+<pre><code class="language-r">13 + 7 * 100
+</code></pre>
+<p>As we can see above, R will respect the rules that govern order of operation in arithemetic. If we wanted to be more explicit, we could also add parantheses to the above expression. </p>
+<pre><code class="language-r">13 + (7 * 100)
+</code></pre>
+<p>And of course, we can also use the parantheses to control the order of operations and change the above result.</p>
+<pre><code class="language-r">(13 + 7) * 100
+</code></pre>
+<h2><a class="header" href="#variable-assignment" id="variable-assignment">Variable Assignment</a></h2>
+<p>In a more realistic scenario, we would perform some computation and also want to preserve the result in some way such that it is accessible for subsequent computations. Essentially, we want to tell the machine &quot;<em>Do this math, and store the result</em>&quot;. This is something we can acheive using the assignment operator in R. The assignment operator in R is the arrow <code>&lt;-</code>, which we construct using the less-than symbol combined with the dash symbol.<sup class="footnote-reference"><a href="#3">2</a></sup></p>
+<pre><code class="language-r">a &lt;- 13 + 7
+</code></pre>
+<div class="footnote-definition" id="3"><sup class="footnote-definition-label">2</sup>
+<p>Strictly speaking, there are a few assignment operators in R, including the equal sign, which is much more common in other programming languages. However, when learning a programming language, it is generally preferred to adopt the conventions of the language. And the convention in R has always been to use <code>&lt;-</code> for assignments.</p>
+</div>
+<p>Programming is essentially just about giving a computer instructions. The above code is us telling the computer to take <code>13</code> and <code>7</code>, add them together, and then put the result in <code>a</code>. Here <code>a</code> is just a completely arbitrary label for the result of <code>13 + 7</code>.<sup class="footnote-reference"><a href="#4">3</a></sup> </p>
+<div class="footnote-definition" id="4"><sup class="footnote-definition-label">3</sup>
+<p>It is worth noting that variable names are almost completely arbitrary; we could just as easily have said <code>potato &lt;- 13 + 7</code>, and the only difference is that when we want to retrieve the value, we would now use <code>potato</code> to refer to it rather than <code>a</code>. The only restriction on variable names in R is that they must begin with an upper or lowercase letter.</p>
+</div>
+<p>Note that the above code snippet does not immediately generate output. However, this is the default behavior when performing assignment. But now if we wanted to print the result of the computation, we can simply use the <code>print()</code> function in R.</p>
+<pre><code class="language-r">print(a)         # show us the value of `a`
+</code></pre>
+<p>Two things are worth noting from the code snippet above. First, we have seen our first example of the <code>print()</code> function. This is a function in R that is used to display the contents of objects. Here, we pass <code>a</code> to the print function, and we then observe the value of <code>a</code>, which is <code>20</code> as expected. </p>
+<p>The second thing to note is that we have now seen our first comment. Using the <code>#</code> character is how we tell R that we are just leaving a note for our future selves or others who end up reading our code. Everything on the line that is to the right of <code>#</code> will not be evaluated by R.</p>
+<h2><a class="header" href="#basic-types" id="basic-types">Basic Types</a></h2>
+<p>There are a few things that contribute to how a programming languages &quot;feels&quot;. Without question, one of the key elements is the language's type system. A language's type system essentially refers to the kinds of values the langauge can represent (e.g., integers, boolean values, strings of characters, <em>etc</em>.).</p>
+<h3><a class="header" href="#numeric-types" id="numeric-types">Numeric Types</a></h3>
+<p>We have already seen examples of a numeric type. In the examples above, computing the sum of <code>13</code> and <code>7</code> gives us an integer value. We can inspect the type of an element with the <code>typeof()</code> function. </p>
+<pre><code class="language-r">b &lt;- 17 + 13         
+
+typeof(b)   
+</code></pre>
+<p>We see the above result is <code>&quot;double&quot;</code>, which stands for &quot;<em>double precision floating point number</em>&quot;. This is how R stores the result of many numeric operations. Consider the example below.</p>
+<pre><code class="language-r">d &lt;- 1.3 + 7.1
+
+typeof(d)
+</code></pre>
+<h3><a class="header" href="#boolean-types" id="boolean-types">Boolean Types</a></h3>
+<p>Like most other languages, R is also capable of representing Boolean values (i.e., <code>logical</code> values <code>TRUE</code>, and <code>FALSE</code>). As we will see later, these kinds of values end up being very useful when working with conditional expressions.</p>
+<pre><code class="language-r">bool_val &lt;- FALSE
+
+typeof(bool_val)
+</code></pre>
+<p>Like many other langauges, R also lets us do arithmetic with boolean values. Consider the example below. </p>
+<pre><code class="language-r">num_trues &lt;- TRUE + FALSE + TRUE 
+
+print(num_trues)
+</code></pre>
+<p>This is something that we will see later has the ability to help us count occurences.</p>
+<h3><a class="header" href="#character-strings" id="character-strings">Character Strings</a></h3>
+<p>Another hugely important type of variable is the character string. These are simply the type <code>character</code> in R. The character string is simply a sequence of letters. Consider the example below.</p>
+<pre><code class="language-r">dog_name &lt;- &quot;willie&quot;
+
+typeof(dog_name)
+</code></pre>
+<p>Here, we have created a character string called <code>dog_name</code>, and we assign it the value of <code>&quot;willie&quot;</code>. And upon checking, we also see that this variable has the type <code>character</code>. </p>
+<p>We can perform many intesting operations on character strings. Suppose we wanted to paste together two character strings; we can do so using the <code>paste()</code> function in R. </p>
+<pre><code class="language-r">pets &lt;- paste(&quot;willie&quot;, &quot;and leo&quot;)   # paste together
+
+print(pets)
+</code></pre>
+<p>We can also take variables saved as strings and paste them together. </p>
+<pre><code class="language-r">my_opinion &lt;- paste(pets, &quot;are great!&quot;)
+
+print(my_opinion)
+</code></pre>
+<p>Here we see that we can take the saved string variable <code>pets</code> and paste it together with <code>&quot;are great!&quot;</code>.</p>
+<p>We can also change between upper and lowercase characters by using the <code>toupper()</code> and the <code>tolower()</code> functions, respectively. Consider the example below.</p>
+<pre><code class="language-r">my_loud_opinion &lt;- toupper(my_opinion)
+
+print(my_loud_opinion)
+</code></pre>
+<p>Much as we use the <code>paste()</code> function to combine character strings, we can use the <code>substr()</code> function to take subsets of a given string. For example the snippet below returns the first 3 elements of the string <code>my_opinion</code> and stores them in a new variable called <code>name_fragment</code>, which we then print.</p>
+<pre><code class="language-r">name_fragment &lt;- substr(my_opinion, 1, 3)
+
+print(name_fragment)
+</code></pre>
+<p>There are a host of other functions for working with strings in R. And we will later explore many that live in the <code>stringr</code> add-on package in R.</p>
+<h2><a class="header" href="#container-types" id="container-types">Container Types</a></h2>
+<p>As the name implies, container types in R tend to be types that &quot;hold things&quot;. There are many different container types in R, and we will explore the most common and useful here. </p>
+<h3><a class="header" href="#the-vector-type" id="the-vector-type">The <code>vector</code> Type</a></h3>
+<p>One hugely usefull example of a container type is the <code>vector</code> type. This is effectively just an ordered sequence of entries. We can construct <code>vector</code> types in a number of ways, but the most basic is using the <code>c()</code> funciton. The <code>c()</code> function basically concatenates the elements that we pass it in to a single container. </p>
+<pre><code class="language-r">my_vect &lt;- c(55, 32, 123)
+
+print(my_vect)
+</code></pre>
+<p>The <code>vector</code> type turns out to be one of the most fundamental in the R language. We will see vectors appear very often. Vectors can contain any type of objects, but a given vector in R will only contain a single type.<sup class="footnote-reference"><a href="#6">4</a></sup></p>
+<p>Accessing elements of a vector can be done using the square bracket notation seen below. </p>
+<pre><code class="language-r">foo &lt;- c(11, 22, 33)
+
+foo[1]                # get first element
+</code></pre>
+<p>Like the Julia programming language, R uses 1-based indexing, which means that a vector's first element is accessed using a <code>1</code> combined with the square bracket notation. We can also obtain &quot;slices&quot; of a vector by using the <code>:</code> operator.</p>
+<pre><code class="language-r">bar &lt;- c(&quot;cat&quot;, &quot;dog&quot;, &quot;shoe&quot;)
+
+animals &lt;- bar[1:2]   # get first two elements
+</code></pre>
+<p>The code snippet above uses the square-bracket notation for indexing combined with the <code>:</code> operator for defining a range of the vector we want to obtain.</p>
+<p>We can also index a vector using <em>another vector</em>. That is we can index the contents of the vector <code>bar</code> by using the square-bracket notation and a second vector of indices. This is illustrated below. </p>
+<pre><code class="language-r">people &lt;- c(&quot;ned&quot;, &quot;jon&quot;, &quot;robb&quot;, &quot;arya&quot;)
+
+is_stark &lt;- c(TRUE, FALSE, TRUE, TRUE)
+
+starks &lt;- people[is_stark]
+</code></pre>
+<h3><a class="header" href="#the-matrix-type" id="the-matrix-type">The <code>matrix</code> Type</a></h3>
+<p>Much the the <code>vector</code> data type, the <code>matrix</code> type is designed for holding elements that are themselves all of the same type (e.g., all numeric, or all strings, etc.).</p>
+<pre><code class="language-r">dat &lt;- seq(1, 12)          
+
+m &lt;- matrix(dat, nrow = 3)
+
+print(m)
+</code></pre>
+<p>Slicing and indexing an array works in much the same way as with vectors; that is, we used the familiar square-bracket notation. In the example below, we access the element in the second row, third column.</p>
+<pre><code class="language-r">m[2, 3]
+</code></pre>
+<p>Note that in the above example the <code>2</code> inside the square bracket corresponds to the row, and the <code>3</code> corresponds to the column. </p>
+<p>The matrix objects also lets us access entire rows or columns by leaving one of the indexes blank. For example, in the code snippet below, we are accessing the entire third column.</p>
+<pre><code class="language-r">m[, 3]
+</code></pre>
+<p>Here, we have left a blank space where the row index would typically be placed. This is the equivalent of saying &quot;<em>All of these!</em>&quot;. We can also do the same for columns; in the example below, we are essentially saying, &quot;<em>Give me the entire second row.</em>&quot;.</p>
+<pre><code class="language-r">m[2, ]
+</code></pre>
+<h2><a class="header" href="#the-array-type" id="the-array-type">The <code>array</code> Type</a></h2>
+<p>Both the <code>vector</code> type and the <code>matrix</code> type can actually be thought of as simply a special case of the <code>array</code> type. An <code>array</code> is the R type for reprsenting <em>N</em>-dimensional arrays; these are containers that have elements that are all of the same type. The number of dimensions defines how we do indexing. If we have a one-dimensional <code>array</code>, we simply have a vector, so we could access the third element (for example) by using <code>v[3]</code>. If we have a two-dimensional array, this is essentially a matrix, and we can access the second row, third column (for exmample) by using <code>m[2, 3]</code>. Now suppose we want to work with a three-dimensional array. The example below creates a three-dimensional array and then illustrates how we index in to it.</p>
+<pre><code class="language-r">dat &lt;- seq(1, 24)
+
+arr &lt;- array(dat, c(4, 2, 3))
+
+print(arr)
+
+arr[2, 1, 3]     # second row, first column, third layer
+</code></pre>
+<p>In the example above, we create a three-dimensional array called <code>arr</code>, and then we use the familiar bracket notation to get the element in the second row and first column of the third &quot;layer&quot;. </p>
+<p>When taking slices of <code>array</code> objects, we can also leave indices blank to indicate &quot;<em>All of these!</em>&quot; as we did with the <code>matrix</code> object. For example, in the snippet below we get the entire third layer of the <code>arr</code> array. </p>
+<pre><code class="language-r">arr[, , 3]
+</code></pre>
+<h2><a class="header" href="#other-interesting-types" id="other-interesting-types">Other Interesting Types</a></h2>
+<p>R has a number of other interesting types in the base language. The types discussed below are interesting in a number of ways. Of particular interest is the manner in which they hint at the early use cases and motivations for developing the R langauge; that is, working with tabular data, that is continuous or categorical, and which sometimes contain missing values. </p>
+<h3><a class="header" href="#the-na-type" id="the-na-type">The <code>NA</code> Type</a></h3>
+<p>One exceedingly common feature of working with real data sets is that they contain missing values. That is, for whatever reason, some entry was omitted for a given record. As an example, suppose a patient did not enter their age on the patient intake form. This would be a missing value that we then have to handle. </p>
+<p>Missing data is so ubiquitous in real data sets that R has a built-in type for representing missing values. This is the <code>NA</code> type. The <code>NA</code> type is special in the sense that it &quot;propogates&quot; over computations. Note the example below, where we try to take the summation of the elements in the <code>vals</code> vector. </p>
+<pre><code class="language-r">vals &lt;- c(4, 23, NA)
+
+sum(vals)
+</code></pre>
+<div class="footnote-definition" id="6"><sup class="footnote-definition-label">4</sup>
+<p>This is similar to <em>N</em>-dimensional arrays in the NumPy library in Python, as well as to the base <code>Array</code> type in Julia.</p>
+</div>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../foundations/intro-r.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../foundations/functions.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../foundations/intro-r.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../foundations/functions.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
