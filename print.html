@@ -422,12 +422,9 @@ index ecc387a..897a0a3 100644
 <p>Both the S programming language—and later R—were designed to give the user access to a &quot;high-level&quot; language that could be used for quickly developing code to solve problems and answer statistical questions. In sum, R is a language that is meant to make it easy to work with data.</p>
 <hr />
 <p><sup class="footnote-reference"><a href="#1">1</a></sup> The term &quot;lower-level&quot; when referring to a programming language is not in any way derogatory. Instead, it referrs to languages which provide a high degree of access and control over the machine's resources (e.g., processor, memory, storage, networking). Low-level languages are said to be &quot;close to the metal&quot;.</p>
-<h1><a class="header" href="#variables-and-types-variables" id="variables-and-types-variables">Variables and Types {#variables}</a></h1>
+<h1><a class="header" href="#variables-and-types" id="variables-and-types">Variables and Types</a></h1>
 <h2><a class="header" href="#basic-math-with-r" id="basic-math-with-r">Basic Math with R</a></h2>
-<p>We can begin our exploration of R by using it in the most straightforward manner; that is, we will use R as a &quot;fancy calculator&quot;. We will quickly see that R is capable of vastly more than a calculator, but this is a good place for us to begin our journey.<sup class="footnote-reference"><a href="#2">1</a></sup></p>
-<div class="footnote-definition" id="2"><sup class="footnote-definition-label">1</sup>
-<p>Note that throughout this document we will have code snippets appearing in grey shaded blocks with a monospace font. And often below those blocks, we will see the output that the code snippet generated. These output blocks appear on white background in monospace font but with <code>##</code> in front of each line. It is also worth noting that the output will frequently contain <code>[1]</code> in front of the actual result; this is normal, and will be explained after we discuss container types in Chapter 4.</p>
-</div>
+<p>We can begin our exploration of R by using it in the most straightforward manner; that is, we will use R as a &quot;fancy calculator&quot;. We will quickly see that R is capable of vastly more than a calculator, but this is a good place for us to begin our journey.</p>
 <pre><code class="language-r">13 + 7
 </code></pre>
 <p>We see from above that R can nicely perform simple addition. And the example below also demonstates slightly more interesting arithmetic.</p>
@@ -440,16 +437,10 @@ index ecc387a..897a0a3 100644
 <pre><code class="language-r">(13 + 7) * 100
 </code></pre>
 <h2><a class="header" href="#variable-assignment" id="variable-assignment">Variable Assignment</a></h2>
-<p>In a more realistic scenario, we would perform some computation and also want to preserve the result in some way such that it is accessible for subsequent computations. Essentially, we want to tell the machine &quot;<em>Do this math, and store the result</em>&quot;. This is something we can acheive using the assignment operator in R. The assignment operator in R is the arrow <code>&lt;-</code>, which we construct using the less-than symbol combined with the dash symbol.<sup class="footnote-reference"><a href="#3">2</a></sup></p>
+<p>In a more realistic scenario, we would perform some computation and also want to preserve the result in some way such that it is accessible for subsequent computations. Essentially, we want to tell the machine &quot;<em>Do this math, and store the result</em>&quot;. This is something we can acheive using the assignment operator in R. The assignment operator in R is the arrow <code>&lt;-</code>, which we construct using the less-than symbol combined with the dash symbol.<sup class="footnote-reference"><a href="#1">1</a></sup></p>
 <pre><code class="language-r">a &lt;- 13 + 7
 </code></pre>
-<div class="footnote-definition" id="3"><sup class="footnote-definition-label">2</sup>
-<p>Strictly speaking, there are a few assignment operators in R, including the equal sign, which is much more common in other programming languages. However, when learning a programming language, it is generally preferred to adopt the conventions of the language. And the convention in R has always been to use <code>&lt;-</code> for assignments.</p>
-</div>
-<p>Programming is essentially just about giving a computer instructions. The above code is us telling the computer to take <code>13</code> and <code>7</code>, add them together, and then put the result in <code>a</code>. Here <code>a</code> is just a completely arbitrary label for the result of <code>13 + 7</code>.<sup class="footnote-reference"><a href="#4">3</a></sup> </p>
-<div class="footnote-definition" id="4"><sup class="footnote-definition-label">3</sup>
-<p>It is worth noting that variable names are almost completely arbitrary; we could just as easily have said <code>potato &lt;- 13 + 7</code>, and the only difference is that when we want to retrieve the value, we would now use <code>potato</code> to refer to it rather than <code>a</code>. The only restriction on variable names in R is that they must begin with an upper or lowercase letter.</p>
-</div>
+<p>Programming is essentially just about giving a computer instructions. The above code is us telling the computer to take <code>13</code> and <code>7</code>, add them together, and then put the result in <code>a</code>. Here <code>a</code> is just a completely arbitrary label for the result of <code>13 + 7</code>.<sup class="footnote-reference"><a href="#2">2</a></sup> </p>
 <p>Note that the above code snippet does not immediately generate output. However, this is the default behavior when performing assignment. But now if we wanted to print the result of the computation, we can simply use the <code>print()</code> function in R.</p>
 <pre><code class="language-r">print(a)         # show us the value of `a`
 </code></pre>
@@ -517,7 +508,7 @@ print(name_fragment)
 
 print(my_vect)
 </code></pre>
-<p>The <code>vector</code> type turns out to be one of the most fundamental in the R language. We will see vectors appear very often. Vectors can contain any type of objects, but a given vector in R will only contain a single type.<sup class="footnote-reference"><a href="#6">4</a></sup></p>
+<p>The <code>vector</code> type turns out to be one of the most fundamental in the R language. We will see vectors appear very often. Vectors can contain any type of objects, but a given vector in R will only contain a single type.</p>
 <p>Accessing elements of a vector can be done using the square bracket notation seen below. </p>
 <pre><code class="language-r">foo &lt;- c(11, 22, 33)
 
@@ -568,17 +559,12 @@ arr[2, 1, 3]     # second row, first column, third layer
 <p>When taking slices of <code>array</code> objects, we can also leave indices blank to indicate &quot;<em>All of these!</em>&quot; as we did with the <code>matrix</code> object. For example, in the snippet below we get the entire third layer of the <code>arr</code> array. </p>
 <pre><code class="language-r">arr[, , 3]
 </code></pre>
-<h2><a class="header" href="#other-interesting-types" id="other-interesting-types">Other Interesting Types</a></h2>
-<p>R has a number of other interesting types in the base language. The types discussed below are interesting in a number of ways. Of particular interest is the manner in which they hint at the early use cases and motivations for developing the R langauge; that is, working with tabular data, that is continuous or categorical, and which sometimes contain missing values. </p>
-<h3><a class="header" href="#the-na-type" id="the-na-type">The <code>NA</code> Type</a></h3>
-<p>One exceedingly common feature of working with real data sets is that they contain missing values. That is, for whatever reason, some entry was omitted for a given record. As an example, suppose a patient did not enter their age on the patient intake form. This would be a missing value that we then have to handle. </p>
-<p>Missing data is so ubiquitous in real data sets that R has a built-in type for representing missing values. This is the <code>NA</code> type. The <code>NA</code> type is special in the sense that it &quot;propogates&quot; over computations. Note the example below, where we try to take the summation of the elements in the <code>vals</code> vector. </p>
-<pre><code class="language-r">vals &lt;- c(4, 23, NA)
-
-sum(vals)
-</code></pre>
-<div class="footnote-definition" id="6"><sup class="footnote-definition-label">4</sup>
-<p>This is similar to <em>N</em>-dimensional arrays in the NumPy library in Python, as well as to the base <code>Array</code> type in Julia.</p>
+<hr />
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>Strictly speaking, there are a few assignment operators in R, including the equal sign, which is much more common in other programming languages. However, when learning a programming language, it is generally preferred to adopt the conventions of the language. And the convention in R has always been to use <code>&lt;-</code> for assignments.</p>
+</div>
+<div class="footnote-definition" id="2"><sup class="footnote-definition-label">2</sup>
+<p>It is worth noting that variable names are almost completely arbitrary; we could just as easily have said <code>potato &lt;- 13 + 7</code>, and the only difference is that when we want to retrieve the value, we would now use <code>potato</code> to refer to it rather than <code>a</code>. The only restriction on variable names in R is that they must begin with an upper or lowercase letter.</p>
 </div>
 <h1><a class="header" href="#functions" id="functions">Functions</a></h1>
 <p>One of the most fundemental methods of organizing code—in any language—is with the use of functions. A function is basically a stand-alone block of code that we can use to carry out operations. In many cases, functions in programming languages work like functions in math; that is, they take some inputs, perform some operations, and then produce some output.</p>
@@ -732,6 +718,15 @@ while (a &gt; 1) {
 }
 </code></pre>
 <p>In the above example we use the <code>next</code> statement to skip all the iterations where <code>i</code> is an even number (recall that the modulo operator gives us the remainder of integer division).</p>
+<h1><a class="header" href="#other-interesting-types" id="other-interesting-types">Other Interesting Types</a></h1>
+<p>R has a number of other interesting types in the base language. The types discussed below are interesting in a number of ways. Of particular interest is the manner in which they hint at the early use cases and motivations for developing the R langauge; that is, working with tabular data, that is continuous or categorical, and which sometimes contain missing values. </p>
+<h1><a class="header" href="#the-na-type" id="the-na-type">The <code>NA</code> Type</a></h1>
+<p>One exceedingly common feature of working with real data sets is that they contain missing values. That is, for whatever reason, some entry was omitted for a given record. As an example, suppose a patient did not enter their age on the patient intake form. This would be a missing value that we then have to handle. </p>
+<p>Missing data is so ubiquitous in real data sets that R has a built-in type for representing missing values. This is the <code>NA</code> type. The <code>NA</code> type is special in the sense that it &quot;propogates&quot; over computations. Note the example below, where we try to take the summation of the elements in the <code>vals</code> vector. </p>
+<pre><code class="language-r">vals &lt;- c(4, 23, NA)
+
+sum(vals)
+</code></pre>
 <h1><a class="header" href="#cleaning-data" id="cleaning-data">Cleaning Data</a></h1>
 <h1><a class="header" href="#visualizing-data" id="visualizing-data">Visualizing Data</a></h1>
 <h1><a class="header" href="#sql-lanuage" id="sql-lanuage">SQL Lanuage</a></h1>
