@@ -2,7 +2,7 @@
 
 - [Introduction](./intro.md)
     * [Format](./format.md)
-    * [Prerequisites](./prerequisites.md)
+    * [Module Resources](./resources.md)
     * [Jupyter](./jupyter.md)
 - [Foundations](./foundations/foundations.md)
     * [Unix Shell](./foundations/unix.md)

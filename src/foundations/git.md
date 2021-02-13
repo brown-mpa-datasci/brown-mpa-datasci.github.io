@@ -68,14 +68,14 @@ git status
 and we should see some output like this:
 
 ```
-On branch master
+On branch main
 
 No commits yet
 
 nothing to commit (create/copy files and use "git add" to track)
 ```
 
-As this output suggests, we are on the `master` branch in this repository, and we have not yet made any commits.
+As this output suggests, we are on the `main` branch in this repository, and we have not yet made any commits.
 
 
 ### Making our First Commit
@@ -89,7 +89,7 @@ There was no possibility of taking a walk that day.
 Let's save and exit from our text editor. And now we will again run `git status`. This time we get some more interesting output.
 
 ```
-On branch master
+On branch main
 
 No commits yet
 
@@ -110,7 +110,7 @@ git add lines.txt
 And now when we run `git status` again, we see something like the output below.
 
 ```
-On branch master
+On branch main
 
 No commits yet
 
@@ -129,7 +129,7 @@ git commit -m "added line from jane eyre"
 The `git commit` command tells Git to add the file(s) from the staging area to the repository, and we pass it a commit message using the `-m` optional flag followed by the message in quotes. Git will then provide some output like we see below to confirm that the commit has been successful.
 
 ```
-[master (root-commit) aa601ee] added line from jane eyre
+[main (root-commit) aa601ee] added line from jane eyre
  1 file changed, 1 insertion(+)
  create mode 100644 lines.txt
  ```
@@ -137,7 +137,7 @@ The `git commit` command tells Git to add the file(s) from the staging area to t
  We can also get more information about the commit by using the `git log` command, which generates output much like what we see below.
 
 ```
-commit aa601eed8c173947c345fa1d213a919bdf2c11cd (HEAD -> master)
+commit aa601eed8c173947c345fa1d213a919bdf2c11cd (HEAD -> main)
 Author: paul <paul@gmail.com>
 Date:   Wed Sep 10 18:43:51 2019 -0400
 
@@ -158,7 +158,7 @@ Happy families are all alike; every unhappy family is unhappy in its own way.
 Now let's save those changes and close our text editor. And if we run `git status` again, we see something like the output below. 
 
 ```
-On branch master
+On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
@@ -222,9 +222,9 @@ where `<URL>` is replaced by the URL for the newly created remote repo.
 
 ### Pushing Commits to a Remote Repo
 
-Once we have added our remote repo, and we have made some commits, we are ready to push these to the remote repo. This is simply done using `git push` command followed by the name of the remote, which we specified above as `origin` as well as the name of the branch. In the example below, we are pushing to the `master` branch. 
+Once we have added our remote repo, and we have made some commits, we are ready to push these to the remote repo. This is simply done using `git push` command followed by the name of the remote, which we specified above as `origin` as well as the name of the branch. In the example below, we are pushing to the `main` branch. 
 
 ```bash
-git push origin master
+git push origin main
 ```
 
