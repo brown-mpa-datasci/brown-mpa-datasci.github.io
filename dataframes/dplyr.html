@@ -219,8 +219,7 @@ starwars %&gt;%
     arrange(height)
 </code></pre>
 <p>At this point, we should point out an important feature of the <em>dplyr</em> (and many other) functions in R. Specifically, the three examples above have not altered the original <code>starwars</code> dataframe. In fact, the examples above have only demonstrated how we would use the <code>select()</code> and <code>arrange()</code> function on the dataframe. For us to obtain any usable object from the <code>select()</code> and <code>arrange()</code> functions, we would need to assign the result of the function calls to a new object using <code>&lt;-</code> assignment operator. The example below illustrates this, as well as the use of the <code>desc()</code> function, which when used with the <code>arrange()</code> function allows us to sort in descending order.</p>
-<pre><code class="language-r">
-dat &lt;- starwars %&gt;%
+<pre><code class="language-r">dat &lt;- starwars %&gt;%
            select(name, species, height) %&gt;%
            arrange(desc(height))
 </code></pre>

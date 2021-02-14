@@ -749,6 +749,7 @@ while (a &gt; 1) {
 <tr><td>Git Remotes</td><td><a href="https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=3d8aca0e-c32f-490b-b5f5-ac33015f5f9c">link</a></td><td>7:59</td></tr>
 <tr><td>Methods of Using R</td><td><a href="https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=645037e7-4cf5-4a51-bdd1-ac3401652466">link</a></td><td>6:23</td></tr>
 <tr><td>Numeric &amp; String Variables</td><td><a href="https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=78ada567-443c-45d2-a5bd-ac35012f57bd">link</a></td><td>12:30</td></tr>
+<tr><td>Pulling Slides from GitHub</td><td><a href="https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=479dbb75-a200-4525-be81-ac4b011508a8">link</a></td><td>4:33</td></tr>
 <tr><td>Boolean Variables</td><td><a href="https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=e0992187-c758-4339-a6e2-ac35015d015d">link</a></td><td>7:47</td></tr>
 <tr><td>Intro to Container Types</td><td><a href="https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=4879b21b-0e84-4346-917b-ac3a012e8ba1">link</a></td><td>17:07</td></tr>
 <tr><td>Functions</td><td><a href="https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=efd41946-a448-4f94-a46a-ac41013156cc">link</a></td><td>13:29</td></tr>
@@ -764,8 +765,7 @@ while (a &gt; 1) {
 
 my_df &lt;- data.frame(names = c(&quot;jones&quot;,&quot;lee&quot;,&quot;smith&quot;,&quot;yang&quot;), 
                     age = c(45, 27, 38,51), 
-                    knows_r = c(FALSE, TRUE, TRUE,FALSE), 
-                    stringsAsFactors = FALSE)
+                    knows_r = c(FALSE, TRUE, TRUE,FALSE))
 my_df
 </code></pre>
 <p>That created a data frame with 3 columns (names, age, knows_r) and four rows.  For each row we have some information on the name of an individual (stored as a character/string), their age (stored as a numeric value), and a column indicating if they know R or not (stored as a boolean/logical).</p>
@@ -852,8 +852,7 @@ starwars %&gt;%
     arrange(height)
 </code></pre>
 <p>At this point, we should point out an important feature of the <em>dplyr</em> (and many other) functions in R. Specifically, the three examples above have not altered the original <code>starwars</code> dataframe. In fact, the examples above have only demonstrated how we would use the <code>select()</code> and <code>arrange()</code> function on the dataframe. For us to obtain any usable object from the <code>select()</code> and <code>arrange()</code> functions, we would need to assign the result of the function calls to a new object using <code>&lt;-</code> assignment operator. The example below illustrates this, as well as the use of the <code>desc()</code> function, which when used with the <code>arrange()</code> function allows us to sort in descending order.</p>
-<pre><code class="language-r">
-dat &lt;- starwars %&gt;%
+<pre><code class="language-r">dat &lt;- starwars %&gt;%
            select(name, species, height) %&gt;%
            arrange(desc(height))
 </code></pre>
@@ -863,6 +862,17 @@ dat &lt;- starwars %&gt;%
 <p><sup class="footnote-reference"><a href="#3">3</a></sup> Rather than continuing to say &quot;<code>data.frame</code> (or similar object)&quot; we will now simply refer to <code>data.frame</code> objects. It should be noted, however, that this also includes objects such at the <code>tibble</code> from the <em>tibble</em> package (and also exposed in the <em>dplyr</em> package).</p>
 <h1><a class="header" href="#cleaning-data" id="cleaning-data">Cleaning Data</a></h1>
 <h1><a class="header" href="#visualizing-data" id="visualizing-data">Visualizing Data</a></h1>
+<h1><a class="header" href="#video-lessons-1" id="video-lessons-1">Video Lessons</a></h1>
+<table><thead><tr><th>Topic</th><th>Link</th><th>Run Time</th></tr></thead><tbody>
+<tr><td>Intro to DataFrames</td><td><a href="https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=28548817-cdfb-4e2e-9e68-ac4a012572a1">link</a></td><td>9:25</td></tr>
+<tr><td>Reading from a CSV File</td><td><a href="https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=ec07f0d6-a525-4555-97bc-ac4a012ad2fe">link</a></td><td>18:34</td></tr>
+<tr><td>Filter with dplyr</td><td><a href="https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=eb210ee7-7227-4658-b2d3-ac5200f702f4">link</a></td><td>15:00</td></tr>
+<tr><td>Select with dplyr</td><td><a href="https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=502629fc-aef4-4614-8600-ac5200fe0a18">link</a></td><td>11:49</td></tr>
+<tr><td>Summarizing with dplyr</td><td><a href="https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f391ba67-10b2-4d6d-b37b-ac52010b63fa">link</a></td><td>13:19</td></tr>
+<tr><td>Cleaning Strings</td><td><a href="https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=70d4cdb8-2009-4bc9-8e2e-ac5801185755">link</a></td><td>26:23</td></tr>
+<tr><td>Cleaning Dates</td><td><a href="https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=12b10e84-3159-482b-8d97-ac5801224c2b">link</a></td><td>15:25</td></tr>
+<tr><td>Intro to ggplot</td><td><a href="https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=ecbfa38a-ff0c-44f3-999f-ac5901216869">link</a></td><td>30:30</td></tr>
+</tbody></table>
 <h1><a class="header" href="#videos" id="videos">Videos</a></h1>
 <h1><a class="header" href="#sql-lanuage" id="sql-lanuage">SQL Lanuage</a></h1>
 <h1><a class="header" href="#two-language-problem" id="two-language-problem">Two-Language Problem</a></h1>
