@@ -813,9 +813,54 @@ sum(vals)
 <p>Each type of observational unit forms a table.</p>
 </li>
 </ol>
+<h1><a class="header" href="#the-dplyr-grammar" id="the-dplyr-grammar">The <em>dplyr</em> Grammar</a></h1>
+<p>The <em>dplyr</em> package is designed to solve several of the most common operations related to working with tabular data (i.e., data in a <code>data.frame</code> or similar object). These operations include: selecting, summarizing, arranging, mutating, and filtering. And as such, the operations are encapsulated by the following function in <em>dplyr</em>: </p>
+<ol>
+<li>
+<p><code>select()</code></p>
+</li>
+<li>
+<p><code>summarise()</code></p>
+</li>
+<li>
+<p><code>arrange()</code></p>
+</li>
+<li>
+<p><code>mutate()</code></p>
+</li>
+<li>
+<p><code>filter()</code></p>
+</li>
+</ol>
+<h2><a class="header" href="#the-select-function" id="the-select-function">The <code>select()</code> Function</a></h2>
+<p>We can use the <code>select()</code> function to &quot;select&quot; some desired columns from a <code>data.frame</code> (or similar object).<sup class="footnote-reference"><a href="#3">3</a></sup> In the example below we load the <em>dplyr</em> package and then use the <code>select()</code> function to obtain the <code>name</code>, <code>species</code>, and <code>height</code> columns from the <code>starwars</code> dataframe. </p>
+<pre><code class="language-r">library(dplyr)
+
+starwars %&gt;%
+    select(name, species, height)
+</code></pre>
+<p>Also note in the code snippet above the use of the &quot;piping&quot; operator <code>%&gt;%</code> that we use to &quot;pipe&quot; the <code>starwars</code> dataframe in to the <code>filter()</code> function. This piping operator passes the object on the left and then places it as the first argument to the function on the right. The piping operator—though not originally from the <em>dplyr</em> package—is exceedingly popular in examples of <em>dplyr</em> code. Part of the reason for its popularity, is likely the capability to &quot;chain&quot; results of the piping operator together. We will see this in a future example.</p>
+<h2><a class="header" href="#the-arrange-function" id="the-arrange-function">The <code>arrange()</code> Function</a></h2>
+<p>As the name implies, we can use the <code>arrange()</code> function to sort the rows of a dataframe. In the example below, we take the <code>starwars</code> dataframe and sort it according to the <code>height</code> column.</p>
+<pre><code class="language-r">starwars %&gt;%
+    arrange(height)
+</code></pre>
+<h3><a class="header" href="#chaining-the-arrange-function" id="chaining-the-arrange-function">Chaining the <code>arrange()</code> Function</a></h3>
+<p>As mentioned above, we will very often see <em>dplyr</em> function calls &quot;chained&quot; in sequence using the <code>%&gt;%</code> operator. In the case below, we are combining our two previous examples aand thus selecting only the <code>name</code>, <code>species</code> and <code>height</code> columns, and then finally sorting the result according to the <code>height</code> column.</p>
+<pre><code class="language-r">starwars %&gt;%
+    select(name, species, height) %&gt;$
+    arrange(height)
+</code></pre>
+<p>At this point, we should point out an important feature of the <em>dplyr</em> (and many other) functions in R. Specifically, the three examples above have not altered the original <code>starwars</code> dataframe. In fact, the examples above have only demonstrated how we would use the <code>select()</code> and <code>arrange()</code> function on the dataframe. For us to obtain any usable object from the <code>select()</code> and <code>arrange()</code> functions, we would need to assign the result of the function calls to a new object using <code>&lt;-</code> assignment operator. The example below illustrates this, as well as the use of the <code>desc()</code> function, which when used with the <code>arrange()</code> function allows us to sort in descending order.</p>
+<pre><code class="language-r">
+dat &lt;- starwars %&gt;%
+           select(name, species, height) %&gt;$
+           arrange(desc(height))
+</code></pre>
 <hr />
 <p><sup class="footnote-reference"><a href="#1">1</a></sup> The term &quot;library&quot; is often used to mean something a bit more specific in many programming circles, so we will tend to use the word &quot;package&quot; in R. To add to the confusion a bit, the mechanism of loading packages in R is to use the <code>library()</code> function... <code>¯\_(ツ)_/¯</code></p>
 <p><sup class="footnote-reference"><a href="#2">2</a></sup> It is worth noting here that Hadley Wickham is of the most influential developers in the R community. He is responsible for staggering amount of the modern tools used every day by R programmers, and he has simplified the lives of researchers and data scientists across the world.</p>
+<p><sup class="footnote-reference"><a href="#3">3</a></sup> Rather than continuing to say &quot;<code>data.frame</code> (or similar object)&quot; we will now simply refer to <code>data.frame</code> objects. It should be noted, however, that this also includes objects such at the <code>tibble</code> from the <em>tibble</em> package (and also exposed in the <em>dplyr</em> package).</p>
 <h1><a class="header" href="#cleaning-data" id="cleaning-data">Cleaning Data</a></h1>
 <h1><a class="header" href="#visualizing-data" id="visualizing-data">Visualizing Data</a></h1>
 <h1><a class="header" href="#videos" id="videos">Videos</a></h1>
