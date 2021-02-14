@@ -848,13 +848,13 @@ starwars %&gt;%
 <h3><a class="header" href="#chaining-the-arrange-function" id="chaining-the-arrange-function">Chaining the <code>arrange()</code> Function</a></h3>
 <p>As mentioned above, we will very often see <em>dplyr</em> function calls &quot;chained&quot; in sequence using the <code>%&gt;%</code> operator. In the case below, we are combining our two previous examples aand thus selecting only the <code>name</code>, <code>species</code> and <code>height</code> columns, and then finally sorting the result according to the <code>height</code> column.</p>
 <pre><code class="language-r">starwars %&gt;%
-    select(name, species, height) %&gt;$
+    select(name, species, height) %&gt;%
     arrange(height)
 </code></pre>
 <p>At this point, we should point out an important feature of the <em>dplyr</em> (and many other) functions in R. Specifically, the three examples above have not altered the original <code>starwars</code> dataframe. In fact, the examples above have only demonstrated how we would use the <code>select()</code> and <code>arrange()</code> function on the dataframe. For us to obtain any usable object from the <code>select()</code> and <code>arrange()</code> functions, we would need to assign the result of the function calls to a new object using <code>&lt;-</code> assignment operator. The example below illustrates this, as well as the use of the <code>desc()</code> function, which when used with the <code>arrange()</code> function allows us to sort in descending order.</p>
 <pre><code class="language-r">
 dat &lt;- starwars %&gt;%
-           select(name, species, height) %&gt;$
+           select(name, species, height) %&gt;%
            arrange(desc(height))
 </code></pre>
 <hr />
