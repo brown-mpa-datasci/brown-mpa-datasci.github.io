@@ -55,7 +55,7 @@ As mentioned above, we will very often see _dplyr_ function calls "chained" in s
 
 ```r
 starwars %>%
-    select(name, species, height) %>$
+    select(name, species, height) %>%
     arrange(height)
 ```
 
@@ -64,7 +64,7 @@ At this point, we should point out an important feature of the _dplyr_ (and many
 ```r
 
 dat <- starwars %>%
-           select(name, species, height) %>$
+           select(name, species, height) %>%
            arrange(desc(height))
 ```
 
