@@ -10,11 +10,11 @@ The name _dplyr_ is short for "data plier". This reflects the author's intent fo
 
 The _dplyr_ package (and much of Wickham's work) centers on the notion of "[tidy data](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html)". The key features of tidy data arae the following.
 
-    1. Each variable forms a column.
-    
-    2. Each observation forms a row.
-    
-    3. Each type of observational unit forms a table.
+1. Each variable forms a column.
+
+2. Each observation forms a row.
+
+3. Each type of observational unit forms a table.
 
 
 
