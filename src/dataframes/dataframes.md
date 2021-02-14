@@ -15,8 +15,7 @@ Best way to learn what a data frame is is to look at one.  Let's now build a sim
 
 my_df <- data.frame(names = c("jones","lee","smith","yang"), 
                     age = c(45, 27, 38,51), 
-                    knows_r = c(FALSE, TRUE, TRUE,FALSE), 
-                    stringsAsFactors = FALSE)
+                    knows_r = c(FALSE, TRUE, TRUE,FALSE))
 my_df
 ```
 

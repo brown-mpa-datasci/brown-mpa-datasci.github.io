@@ -62,7 +62,6 @@ starwars %>%
 At this point, we should point out an important feature of the _dplyr_ (and many other) functions in R. Specifically, the three examples above have not altered the original `starwars` dataframe. In fact, the examples above have only demonstrated how we would use the `select()` and `arrange()` function on the dataframe. For us to obtain any usable object from the `select()` and `arrange()` functions, we would need to assign the result of the function calls to a new object using `<-` assignment operator. The example below illustrates this, as well as the use of the `desc()` function, which when used with the `arrange()` function allows us to sort in descending order.
 
 ```r
-
 dat <- starwars %>%
            select(name, species, height) %>%
            arrange(desc(height))
