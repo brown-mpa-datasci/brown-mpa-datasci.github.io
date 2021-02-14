@@ -16,7 +16,7 @@
     * [Missing Data](./dataframes/na.md)
     * [The dplyr Package](./dataframes/dplyr.md)
     * [Cleaning Data](./dataframes/cleaning.md)
-    * [Visualizing Data](./dataframes/viz.md)
+    * [Plotting with ggplot2](./dataframes/viz.md)
     * [Videos](./dataframes/vids.md)
 - [Model Fitting](./models/models.md)
     * [Intro Hypothesis Testing](./models/hypothesis-testing.md)
