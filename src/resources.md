@@ -7,6 +7,6 @@ Additionally, all lessons' slides and code for this module are available on GitH
 ---
 [^1] [https://mpa.jupyter.brown.edu](https://mpa.jupyter.brown.edu)
 
-[^2] [https://github.com/brown-mpa-datasci/slides](https://github.com/brown-mpa-datasci/notebooks)
+[^2] [https://github.com/brown-mpa-datasci/notebooks](https://github.com/brown-mpa-datasci/notebooks)
 
 [^3] [https://brown-mpa-datasci.slack.com](https://brown-mpa-datasci.slack.com)
